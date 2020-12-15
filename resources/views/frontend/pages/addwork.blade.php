@@ -12,16 +12,23 @@
                     </x-slot>
 
                     <x-slot name="body">
-                        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="/addwork">
+                        <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="/addwork" enctype="multipart/form-data">
                        @csrf
                         <div class="form-group">
                           <label for="name">Название</label>
-                          <input  value="" type="text" id="name" name="name" class="form-control">
+                          <input  value="" type="text" id="name" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
                           <label for="price">Цена</label>
-                          <input  value="" type="number" id="price" name="price" class="form-control">
+                          <input  value="" type="number" id="price" name="price" class="form-control" required>
                         </div>
+                        <div class="form-group">
+                          <label for="image">Фотография</label>
+                          <input  value="" type="file" name="image" id="image" class="form-control" required>
+                        </div>
+                                            
+
+
                         <button type="submit" class="btn btn-primary">Сохранить</button>
                       </form>
                     </x-slot>

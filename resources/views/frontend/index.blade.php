@@ -98,8 +98,10 @@
                 </div><!--title-->
 
                 <div class="links">
-                    <a href="http://laravel-boilerplate.com" target="_blank"><i class="fa fa-book"></i> @lang('Docs')</a>
-                    <a href="https://github.com/rappasoft/laravel-boilerplate" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="/works">Все работы</a>
+                    <a href="/my-works">Мои работы</a>
+                    <a href="/add-works">Добавить работу</a>
+                    <a href="/my-orders">Мои заявки</a>
                 </div><!--links-->
             </div><!--content-->
         </div><!--app-->

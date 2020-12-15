@@ -47,6 +47,14 @@ Route::post('addwork', function (Request $request) {
     }
     // dd($request->price);
     $user_id = Auth::id();
+
+    // проверка фотографии
+    $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+    $imageName = time().'.'.$request->image->extension();  
+    $request->image->move(public_path('img/works'), $imageName);
+        /* Store $imageName name in DATABASE from HERE */
     $works = new Works;
     $works->name = $request->name;
     $works->ownerId = $user_id;
