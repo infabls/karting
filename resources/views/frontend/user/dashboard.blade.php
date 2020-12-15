@@ -12,7 +12,9 @@
                     </x-slot>
 
                     <x-slot name="body">
-                        @lang('You are logged in!')
+                        <a href="/my-works">Мои работы</a><br>
+                        <a href="/my-orders">Мои заявки</a><br>
+                        <a href="/addwork">Добавить работу</a><br>
                     </x-slot>
                 </x-frontend.card>
             </div><!--col-md-10-->
