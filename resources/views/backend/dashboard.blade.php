@@ -9,7 +9,9 @@
         </x-slot>
 
         <x-slot name="body">
-            @lang('Welcome to the Dashboard')
+            @lang('Welcome to the Dashboard')<br>
+            <a href="/admin/allworks">Все работы</a><br>
+            <a href="/admin/orders">Все заявки</a><br>
         </x-slot>
     </x-backend.card>
 @endsection
