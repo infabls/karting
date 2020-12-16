@@ -93,8 +93,8 @@
             <div class="content">
                 @include('includes.partials.messages')
 
-                <div class="title m-b-md">
-                    <example-component></example-component>
+                <div class="title m-b-md" style="font-size: 50px;">
+                    Социальная платформа
                 </div><!--title-->
 
                 <div class="links">

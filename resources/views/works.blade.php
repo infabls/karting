@@ -21,7 +21,22 @@
                 height: 100vh;
                 margin: 0;
             }
-
+                h1, .h1{
+                    margin-bottom:50px;
+                }
+                button{
+                    border: none;
+                    background: #36d2ea;
+                    color:#fff;
+                    text-transform:uppercase;
+                    font-weight:bold;
+                    margin-top:10px;
+                    margin-bottom:10px;
+                    padding: 10px;
+                }
+                button:hover{
+                    background: #2894a5;
+                }
             .full-height {
                 height: 100vh;
             }
@@ -63,6 +78,28 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .content{
+                max-width: 920px;
+                width: 100%;
+            }
+            .works-container{
+              display: -webkit-flex;
+              display: -ms-flex;
+              display: flex;
+              justify-content: space-around;
+            }
+            .works{
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                border:1px solid #000;
+                border-radius:10px;
+                padding: 10px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            }
+            .link-details{
+                margin: 10px;
+            }
         </style>
         @stack('after-styles')
 
@@ -91,19 +128,23 @@
             <div class="content">
                <h1>Все работы <span>({{count($works)}})</span></h1>
                @if (count($works) > 0 )
+               <div class="works-container">
+
+
                @foreach ($works as $work)
                     <div class="works">
                         <h2>{{$work->name}}</h2>
                         <p>Цена для приобретения {{$work->price}}</p>
                         <img src="{{$work->photo}}" alt="{{$work->name}}" width="100px" height="100px">
-                        <a href="works/{{$work->id}}">Детали работы</a>
+                        <a class="link-details" href="works/{{$work->id}}">Детали работы</a>
                         <button>Купить</button>
                     </div>
                @endforeach
+                    </div>
                @else
                <p>Недоступен для участия</p>
                @endif
-               
+
             </div><!--content-->
         </div><!--app-->
 

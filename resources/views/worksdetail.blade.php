@@ -59,9 +59,29 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
+            .content{
+                max-width: 920px;
+                width: 100%;
+            }
             .m-b-md {
                 margin-bottom: 30px;
+            }
+            .work_inner{
+                display:flex;
+                justify-content:space-around;
+            }
+            button{
+                border: none;
+                background: #36d2ea;
+                color:#fff;
+                text-transform:uppercase;
+                font-weight:bold;
+                margin-top:10px;
+                margin-bottom:10px;
+                padding: 10px;
+            }
+            button:hover{
+                background: #2894a5;
             }
         </style>
         @stack('after-styles')
@@ -89,50 +109,57 @@
             </div><!--top-right-->
 
             <div class="content">
-               <h1>{{$works->name}}</h1>
-               <p>Стоимость лота {{$works->price}} тг</p>
-               <img src="{{$works->photo}}" alt="{{$works->name}}" width="100px" height="100px">
-               @if (count($orders) > 0)
-               <p>Всего заявок - {{count($orders)}}</p>
-               @endif
-               @if ($works->status == 'on')
-               <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('/works/buy')}}">
-               @csrf
-               <div class="box_detail booking">
-                <div class="price">
-                    <div class="form-group">
-                        <input  value="{{$works->id}}" type="text" id="worksId" name="worksId" class="form-control" required="" hidden="">
-                    </div>
-                    <span>Оставить заявку</span>
+              <div class="work_inner">
+                <div class="work_inner-left">
+                    <h1>{{$works->name}}</h1>
+                    <p>Стоимость лота {{$works->price}} тг</p>
+                    <img src="{{$works->photo}}" alt="{{$works->name}}">
                 </div>
-                <div class="form-group" id="input-dates">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Имя</label>
-                      <input  name="name" type="text" class="form-control" id="name" required="" placeholder="Имя Фамилия">
-                  </div>
-              </div> 
-              <div class="form-group" id="input-dates">
-                  <div class="form-group">
-                      <label for="exampleInputEmail1">Номер телефона</label>
-                      <input  name="phone" type="tel" class="form-control" id="phone" required="" placeholder="Введите ваш номер">
-                  </div>
-              </div>
-              <div class="form-group" id="input-dates">
-                  <div class="form-group">
-                      <label for="email">Емейл</label>
-                      <input  name="email" type="email" class="form-control" id="email" required="" placeholder="Ваш емейл">
-                  </div>
-              </div>
-              <button type="submit" class="add_top_30 btn_1 full-width purchase">Записаться</button>
-              <div class="text-center"><small>Подача заявки бесплатна!</small></div>
-          </div>
-      </form>
+                <div class="work_inner-right">
+                    @if (count($orders) > 0)
+                    <p>Всего заявок - {{count($orders)}}</p>
+                    @endif
+                    @if ($works->status == 'on')
+                    <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('/works/buy')}}">
+                    @csrf
+                    <div class="box_detail booking">
+                     <div class="price">
+                         <div class="form-group">
+                             <input  value="{{$works->id}}" type="text" id="worksId" name="worksId" class="form-control" required="" hidden="">
+                         </div>
+                         <span>Оставить заявку</span>
+                     </div>
+                     <div class="form-group" id="input-dates">
+                         <div class="form-group">
+                           <label for="exampleInputEmail1">Имя</label>
+                           <input  name="name" type="text" class="form-control" id="name" required="" placeholder="Имя Фамилия">
+                       </div>
+                   </div>
+                   <div class="form-group" id="input-dates">
+                       <div class="form-group">
+                           <label for="exampleInputEmail1">Номер телефона</label>
+                           <input  name="phone" type="tel" class="form-control" id="phone" required="" placeholder="Введите ваш номер">
+                       </div>
+                   </div>
+                   <div class="form-group" id="input-dates">
+                       <div class="form-group">
+                           <label for="email">Емейл</label>
+                           <input  name="email" type="email" class="form-control" id="email" required="" placeholder="Ваш емейл">
+                       </div>
+                   </div>
+                   <button type="submit" class="add_top_30 btn_1 full-width purchase">Записаться</button>
+                   <div class="text-center"><small>Подача заявки бесплатна!</small></div>
+               </div>
+           </form>
 
-               @else
-               <p>Недоступен для участия</p>
-               @endif
-               
+                    @else
+                    <p>Недоступен для участия</p>
+                    @endif
+                </div>
+
+
             </div><!--content-->
+              </div>
         </div><!--app-->
 
         @stack('before-scripts')
