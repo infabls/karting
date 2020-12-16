@@ -19,7 +19,7 @@
                           <th>Название</th>
                           <th>Цена</th>
                           <th>Статус</th>
-                          <th>Действия</th>
+                          <th>Фото</th>
                         </thead>
                         <!-- Тело таблицы -->
                         <tbody>
@@ -38,16 +38,12 @@
 
                               <!-- действия с заявками -->
                               <td class="table-text">
-                                    <a href="{{ url('editwork/'.$work->id) }}">
-                                    <button type="submit" class="btn btn-danger">
-                                      <i class="fa fa-pen"></i> Изменить
-                                    </button>
-                                    </a>
+                                  <img src="{{$work->photo}}" alt="{{$work->name}}" width="100px" height="100px">
                               </td> 
                             </tr>
                           @endforeach
                           @else
-                          <p>У вас нет фирм. Хотите создать?</p>
+                          <p>У вас нет работ. Хотите добавить?</p>
                           @endif
                         </tbody>
                       </table>

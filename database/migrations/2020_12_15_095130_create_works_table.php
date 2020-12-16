@@ -18,6 +18,7 @@ class CreateWorksTable extends Migration
             $table->string('ownerId')->default(1);
             $table->string('name');
             $table->string('status');
+            $table->string('photo');
             $table->string('price');
             $table->timestamps();
         });

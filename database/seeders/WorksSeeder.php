@@ -25,6 +25,7 @@ class WorksSeeder extends Seeder
             'id' => '1',
             'ownerId' => '1',
             'name' => 'Первый лот',
+            'photo' => '/img/works/1608033914.jpg',
             'price' => 1000,
             'status' => 'on',
         ]);
@@ -32,6 +33,7 @@ class WorksSeeder extends Seeder
             'id' => '2',
             'ownerId' => '2',
             'name' => 'Второй лот',
+            'photo' => '/img/works/1608099658.jpg',
             'price' => 1000,
             'status' => 'on',
         ]);

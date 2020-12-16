@@ -95,6 +95,7 @@
                     <div class="works">
                         <h2>{{$work->name}}</h2>
                         <p>Цена для приобретения {{$work->price}}</p>
+                        <img src="{{$work->photo}}" alt="{{$work->name}}" width="100px" height="100px">
                         <a href="works/{{$work->id}}">Детали работы</a>
                         <button>Купить</button>
                     </div>

@@ -58,6 +58,7 @@ Route::post('addwork', function (Request $request) {
     $works = new Works;
     $works->name = $request->name;
     $works->ownerId = $user_id;
+    $works->photo = '/img/works/' . $imageName;
     $works->price = $request->price;
     $works->status = 'mod';
     $works->save();

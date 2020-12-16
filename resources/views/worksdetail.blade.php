@@ -91,6 +91,7 @@
             <div class="content">
                <h1>{{$works->name}}</h1>
                <p>Стоимость лота {{$works->price}} тг</p>
+               <img src="{{$works->photo}}" alt="{{$works->name}}" width="100px" height="100px">
                @if (count($orders) > 0)
                <p>Всего заявок - {{count($orders)}}</p>
                @endif
